@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: front-cheeserun-ingress
+  namespace: frontrun
+spec:
+   ingressClassName: public
+   rules:
+   - host: 
+     http:
+       paths:
+       - path: /
+         pathType: Prefix
+         backend:
+           service:
+             name: front-app-service
+             port:
+               number: 80
