@@ -15,7 +15,7 @@ RUN npm run build --prod
 FROM nginx:alpine
 
 # Copiar la aplicación compilada
-COPY --from=build /app/dist/ng-tailwind/browser /usr/share/nginx/html
+COPY --from=build /app/dist/front-deployment /usr/share/nginx/html
 
 
 EXPOSE 80
